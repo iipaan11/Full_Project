@@ -11,10 +11,10 @@ const apiLimit = rateLimit({
 const router = express.Router();
 const customerController = require('../controllers/customers');
 
-router.post('/customers', apiLimit, customerController.createCustomer);
-router.put('/customers/:id',  customerController.updateCustomer);
-router.delete('/customers/:id',  customerController.deleteCustomer);
-router.get('/customers/:id',  customerController.getCustomer);
-router.get('/customers',  customerController.getCustomers);
+router.post('/customers', customerController.createCustomer);
+router.put('/customers/:id', customerController.updateCustomer);
+router.delete('/customers/:id', customerController.deleteCustomer);
+router.get('/customers/:id', customerController.getCustomer);
+router.get('/customers', customerController.getCustomers);
 
 module.exports = router;
